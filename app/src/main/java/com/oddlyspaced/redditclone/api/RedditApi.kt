@@ -1,5 +1,6 @@
 package com.oddlyspaced.redditclone.api
 
+import com.oddlyspaced.redditclone.api.model.RedditResponse
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path

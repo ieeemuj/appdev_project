@@ -1,4 +1,4 @@
-package com.oddlyspaced.redditclone.api
+package com.oddlyspaced.redditclone.api.model
 
 import com.google.gson.annotations.SerializedName
 
