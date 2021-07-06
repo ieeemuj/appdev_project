@@ -3,6 +3,8 @@ package com.oddlyspaced.redditclone.activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.oddlyspaced.redditclone.R
 import com.oddlyspaced.redditclone.adapter.RedditAdapter
@@ -49,6 +51,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loadData(subreddit: String) {
+        binding.pbLoading.isVisible = true
+        binding.rvReddit.isVisible = false
         client.fetchSubredditData(subreddit).enqueue(object: Callback<RedditResponse> {
             override fun onResponse(call: Call<RedditResponse>, response: Response<RedditResponse>) {
                 if (response.isSuccessful) {
@@ -58,12 +62,17 @@ class MainActivity : AppCompatActivity() {
                             data.add(child.data)
                         }
                         adapter.notifyDataSetChanged()
+                        binding.pbLoading.isVisible = false
+                        binding.rvReddit.isVisible = true
                     }
                 }
             }
 
             override fun onFailure(call: Call<RedditResponse>, t: Throwable) {
                 t.printStackTrace()
+                binding.pbLoading.isVisible = false
+                binding.rvReddit.isVisible = false
+                Toast.makeText(applicationContext, getString(R.string.error_occurred), Toast.LENGTH_SHORT).show()
             }
 
         })
