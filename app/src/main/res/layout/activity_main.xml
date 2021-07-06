@@ -7,18 +7,19 @@
     tools:context=".activity.MainActivity">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textField"
-        android:layout_width="match_parent"
+        android:id="@+id/etSubredditName"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="8dp"
         android:hint="@string/hint_enter_subreddit"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnSubreddit"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etSubredditNameInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -26,12 +27,22 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvReddit"
-        android:layout_width="409dp"
-        android:layout_height="795dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textField" />
+        app:layout_constraintTop_toBottomOf="@+id/etSubredditName" />
+
+    <Button
+        android:id="@+id/btnSubreddit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="@+id/etSubredditName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/etSubredditName" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
