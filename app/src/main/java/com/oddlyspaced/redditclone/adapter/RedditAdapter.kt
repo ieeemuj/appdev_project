@@ -6,9 +6,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.oddlyspaced.redditclone.api.model.RedditChildData
 import com.oddlyspaced.redditclone.databinding.ItemPostBinding
 
+// Adapter class for Reddit data
 class RedditAdapter(private val data: ArrayList<RedditChildData>) : RecyclerView.Adapter<RedditAdapter.RedditViewHolder>() {
 
+    // View holder class for Reddit data
     inner class RedditViewHolder(private val binding: ItemPostBinding) : RecyclerView.ViewHolder(binding.root) {
+        // binds data to view
         fun bind(item: RedditChildData) {
             binding.txTitle.text = item.title
             binding.txAuthor.text = item.author
