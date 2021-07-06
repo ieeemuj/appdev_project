@@ -1,8 +1,9 @@
-package com.oddlyspaced.redditclone
+package com.oddlyspaced.redditclone.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.oddlyspaced.redditclone.R
 import com.oddlyspaced.redditclone.api.RedditClient
 import com.oddlyspaced.redditclone.api.model.RedditResponse
 import retrofit2.Call
