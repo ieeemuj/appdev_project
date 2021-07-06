@@ -1,4 +1,8 @@
 package com.oddlyspaced.redditclone
 
-class RedditResponse {
-}
+import com.google.gson.annotations.SerializedName
+
+data class RedditResponse(
+    @SerializedName("data")
+    val data: RedditData
+)
