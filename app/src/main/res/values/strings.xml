@@ -2,4 +2,5 @@
     <string name="app_name">Reddit Clone</string>
     <string name="hint_enter_subreddit">Enter subreddit name</string>
     <string name="fetch">Fetch</string>
+    <string name="error_occurred">Error Occurred</string>
 </resources>
