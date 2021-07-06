@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Reddit Clone</string>
+    <string name="hint_enter_subreddit">Enter subreddit name</string>
 </resources>
